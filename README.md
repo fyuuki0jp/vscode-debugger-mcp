@@ -119,6 +119,36 @@ The extension runs an SSE (Server-Sent Events) server on `http://localhost:6010/
 3. Open in VSCode
 4. Press `F5` to run the extension in a new Extension Development Host window
 
+## Building the Extension
+
+### Standard Build
+```bash
+npm run build
+```
+This creates `vscode-debugger-mcp-0.0.1.vsix` file.
+
+### Optimized Bundle Build
+```bash
+npm run package-bundle
+```
+This creates a webpack-bundled version for better performance.
+
+### Available Scripts
+- `npm run compile` - Compile TypeScript to JavaScript
+- `npm run watch` - Watch mode compilation
+- `npm run lint` - Run ESLint
+- `npm run package` - Create .vsix package
+- `npm run build` - Compile and package
+- `npm run webpack` - Bundle with webpack
+- `npm run package-bundle` - Bundle and package
+
+## Installation
+
+1. Build the extension using one of the methods above
+2. In VSCode, go to Extensions view
+3. Click the "..." menu and select "Install from VSIX..."
+4. Select the generated `.vsix` file
+
 ## Usage
 
 1. The MCP server starts automatically when the extension activates
@@ -135,3 +165,7 @@ The extension runs an SSE (Server-Sent Events) server on `http://localhost:6010/
 
 - VSCode 1.80.0 or higher
 - Node.js 16.x or higher
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.

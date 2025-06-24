@@ -4,6 +4,10 @@
   "description": "MCP server for VSCode debugger integration",
   "version": "0.0.1",
   "publisher": "vscode-debugger-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyuuki0jp/vscode-debugger-mcp.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -32,7 +36,13 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
-    "test": "jest"
+    "test": "jest",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "build": "npm run compile && npm run package",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "package-bundle": "npm run webpack && vsce package"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
@@ -44,7 +54,11 @@
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",
     "jest": "^29.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "@vscode/vsce": "^2.19.0",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4",
+    "ts-loader": "^9.4.4"
   },
   "dependencies": {
     "cors": "^2.8.5",
